@@ -1,4 +1,4 @@
-package spencercjh;
+package spencercjh.problems;
 
 import javax.inject.Singleton;
 
