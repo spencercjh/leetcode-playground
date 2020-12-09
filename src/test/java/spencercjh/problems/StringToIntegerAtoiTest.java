@@ -21,18 +21,7 @@ class StringToIntegerAtoiTest {
     assertEquals(123, solution.myAtoi("      123 is one two three"));
     assertEquals(0, solution.myAtoi("      one two three is 123"));
     assertEquals(Integer.MIN_VALUE, solution.myAtoi("-91283472332"));
-    assertEquals(2147483646, solution.myAtoi("2147483646"));
-  }
-
-  @Test
-  void myParseNumber() {
-    assertEquals(123, solution.myParseNumber("123"));
-    assertEquals(-123, solution.myParseNumber("-123"));
-    assertEquals(123, solution.myParseNumber("+123"));
-    assertEquals(Integer.MIN_VALUE, solution.myParseNumber("-91283472332"));
-    assertEquals(Integer.MAX_VALUE, solution.myParseNumber("200000000000000000000000000000000000000"));
-    assertEquals(Integer.MIN_VALUE, solution.myParseNumber("-6147483648"));
-    assertEquals(2147483646, solution.myParseNumber("2147483646"));
+    assertEquals(Integer.MAX_VALUE - 1, solution.myAtoi("2147483646"));
   }
 
   @Test

@@ -1,50 +1,56 @@
 package spencercjh.problems;
 
 import javax.inject.Singleton;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author spencercjh
  */
 @Singleton
 public class StringToIntegerAtoi {
-  private static final Pattern PATTERN = Pattern.compile("^[+-]?\\d+");
-
-  public int myAtoi(String s) {
-    final Matcher matcher = PATTERN.matcher(s.trim());
-    if (!matcher.find()) {
-      return 0;
-    }
-    return myParseNumber(matcher.group());
-  }
-
   /**
    * @param s number string
    * @return number
    * @see Integer#parseInt(String)
    */
-  int myParseNumber(String s) {
-    final boolean negative = !isDigit(s.charAt(0)) && s.charAt(0) == '-';
-    final int begin = isDigit(s.charAt(0)) ? 0 : 1;
+  public int myAtoi(String s) {
+    boolean numberBegin = false;
+    boolean positive = true;
     int result = 0;
-    final int limit = negative ? Integer.MIN_VALUE : -Integer.MAX_VALUE;
-    for (int i = begin; i < s.length(); i++) {
-      // Accumulating negatively avoids surprises near MAX_VALUE
-      final int digit = s.charAt(i) - '0';
-      if (digit < 0 || result < limit / 10) {
-        return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+    for (char c : s.toCharArray()) {
+
+      if (!numberBegin) {
+        if (c == ' ') {
+          continue;
+        }
+        if (c == '-' || c == '+') {
+          positive = c == '+';
+          numberBegin = true;
+          continue;
+        } else if (isDigit(c)) {
+          numberBegin = true;
+        } else {
+          return 0;
+        }
       }
-      result *= 10;
-      if (result < limit + digit) {
-        return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+
+      if (!isDigit(c)) {
+        // number end
+        break;
+      } else {
+        final int d = positive ? c - '0' : -(c - '0');
+        if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && d > 7)) {
+          return Integer.MAX_VALUE;
+        }
+        if (result < Integer.MIN_VALUE / 10 || (result == Integer.MIN_VALUE / 10 && d < -8)) {
+          return Integer.MIN_VALUE;
+        }
+        result = result * 10 + d;
       }
-      result -= digit;
     }
-    return negative ? result : -result;
+    return result;
   }
 
-  private boolean isDigit(char ch) {
-    return ch >= '0' && ch <= '9';
+  private boolean isDigit(char c) {
+    return c >= '0' && c <= '9';
   }
 }
