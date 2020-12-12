@@ -19,5 +19,7 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
       - name: sync leetcode today record job step
         uses: ./actions/sync-leetcode-today-record
