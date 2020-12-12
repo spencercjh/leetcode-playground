@@ -1,0 +1,23 @@
+name: Sync LeetCode Today Record
+
+# for prod
+#on:
+#  workflow_dispatch:
+#  schedule:
+#    # Runs at 12am UTC
+#    - cron: "0 0 * * *"
+
+# for test only
+on: [ push ]
+
+jobs:
+  sync_leetcode_today_record_job:
+    name: sync leetcode today record job
+    runs-on: ubuntu-latest
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: sync leetcode today record job step
+        uses: ./actions/sync-leetcode-today-record
