@@ -1,0 +1,10 @@
+# action.yml
+name: Sync LeetCode Today Record
+author: spenecercjh
+description: Sync LeetCode Today Record
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: info
+  color: blue
