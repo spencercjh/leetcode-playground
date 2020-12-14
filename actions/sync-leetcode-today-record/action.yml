@@ -15,6 +15,14 @@ inputs:
     description: "Push files to this branch"
     default: ${{ github.ref	}}
     required: true
+  USER:
+    description: "@author in the file"
+    default: ${{ github.actor }}
+    required: true
+  LANGUAGE:
+    description: "The language you use"
+    default: Java
+    required: false
 runs:
   using: docker
   image: Dockerfile
