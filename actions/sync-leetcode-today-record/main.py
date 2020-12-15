@@ -39,7 +39,9 @@ if __name__ == '__main__':
     question_of_today = lc_client.question_of_today()
     question_data = lc_client.question_data(question_of_today.title_slug)
     question_of_today.set_code_snippet(
-        LeetCodeQuestion.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data['codeSnippets']))
+        LeetCodeQuestion.get_one_language_code_snippets_from_question_data(LANGUAGE, question_data))
+
+    print(f'Sync question: {question_of_today.to_json()}')
 
     print("Checking existence======================================================================")
     to_create_files = []

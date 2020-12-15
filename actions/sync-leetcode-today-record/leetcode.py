@@ -53,19 +53,16 @@ class LeetCodeQuestion(object):
         return json.dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
     def set_code_snippet(self, _code_snippet: str):
-        pass
-
-    def __extract_function_signature_from_snippet(self) -> str:
-        pass
-
-    def __extract_function_name_from_signature(self) -> str:
-        pass
+        self.code_snippet = _code_snippet
+        self.function_signature = self.extract_function_signature_from_snippet()
+        self.function_name = self.extract_function_name_from_signature()
+        return self
 
     def setup_source_file(self) -> GitHubFile:
-        pass
+        raise NotImplementedError
 
     def setup_test_file(self) -> GitHubFile:
-        pass
+        raise NotImplementedError
 
     @staticmethod
     def get_one_language_code_snippets_from_question_data(language: str, _question_data: dict) -> str:
@@ -73,23 +70,22 @@ class LeetCodeQuestion(object):
             if snippet['lang'] == language:
                 return snippet['code']
 
+    def extract_function_name_from_signature(self):
+        raise NotImplementedError
+
+    def extract_function_signature_from_snippet(self) -> str:
+        raise NotImplementedError
+
 
 class JavaLeetCodeQuestion(LeetCodeQuestion):
 
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
-    # FIXME: Pull up to father
-    def set_code_snippet(self, _code_snippet: str):
-        self.code_snippet = _code_snippet
-        self.function_signature = self.__extract_function_signature_from_snippet()
-        self.function_name = self.__extract_function_name_from_signature()
-        return self
-
-    def __extract_function_signature_from_snippet(self) -> str:
+    def extract_function_signature_from_snippet(self) -> str:
         return self.code_snippet[self.code_snippet.index('\n'):self.code_snippet.rindex('\n')]
 
-    def __extract_function_name_from_signature(self) -> str:
+    def extract_function_name_from_signature(self) -> str:
         words = [words for words in self.function_signature.strip().split(' ') if words]
         return words[2][:words[2].rindex('(')]
 
@@ -195,7 +191,7 @@ class LeetCodeClient(object):
                 user=self.user
             )
         else:
-            raise RuntimeError("Not support other language yet")
+            raise NotImplementedError("Not support this language yet")
 
     def question_data(self, _title_slug: str) -> dict:
         while not self.csrf_token:
