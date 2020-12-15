@@ -22,13 +22,9 @@ There is a [github action](.github/workflows/gradle.yml) to run `gradle test` af
 There is a [github action](.github/workflows/sync-leetcode-today-record.yml) to create a Java source and test file
 about _Today Record_(每日一题) at 00:01 UTC+8 every day.
 
+If you are interested in this Action, please use its [external version](https://github.com/marketplace/actions/sync-leetcode-today-problem) instead of the inner action.
+
 References:
 
 - API: https://www.getpostman.com/collections/ffe2b6a457f7baf67764
 - related github action: https://github.com/joshcai/leetcode-sync
-
-TODO: More detail of the question in the Java source file or a new markdown file.
-
-## Contribution
-
-Welcome to submit new issues or contribute code to make solving LeetCode more enjoyable
