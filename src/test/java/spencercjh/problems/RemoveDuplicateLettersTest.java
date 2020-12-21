@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @MicronautTest
 class RemoveDuplicateLettersTest {
 
@@ -13,8 +15,7 @@ class RemoveDuplicateLettersTest {
 
   @Test
   void removeDuplicateLetters() {
-    System.out.println(solution.removeDuplicateLetters("bcabc"));
-    System.out.println(solution.removeDuplicateLetters("cbacdb"));
+    assertEquals("abc", solution.removeDuplicateLetters("bcabc"));
+    assertEquals("acdb", solution.removeDuplicateLetters("cbacdbc"));
   }
-
 }
