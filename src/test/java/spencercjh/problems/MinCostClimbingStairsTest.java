@@ -5,17 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @MicronautTest
 class MinCostClimbingStairsTest {
 
   @Inject
   private MinCostClimbingStairs solution;
-  
+
   @Test
   void minCostClimbingStairs() {
-    
+
   }
 
 }

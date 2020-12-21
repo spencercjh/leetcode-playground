@@ -5,17 +5,16 @@ import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @MicronautTest
 class RemoveDuplicateLettersTest {
 
   @Inject
   private RemoveDuplicateLetters solution;
-  
+
   @Test
   void removeDuplicateLetters() {
-    
+    System.out.println(solution.removeDuplicateLetters("bcabc"));
+    System.out.println(solution.removeDuplicateLetters("cbacdb"));
   }
 
 }
