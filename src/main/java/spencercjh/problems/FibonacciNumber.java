@@ -11,7 +11,16 @@ import javax.inject.Singleton;
 public class FibonacciNumber {
 
   public int fib(int n) {
-    return 0;
+    if (n < 2) {
+      return n;
+    }
+    int result = 1;
+    for (int i = 2, p, q = 0; i <= n; i++) {
+      p = q;
+      q = result;
+      result = p + q;
+    }
+    return result;
   }
 
 }
