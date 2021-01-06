@@ -19,6 +19,14 @@ public class TestUtils {
     b = List.of(1, 2);
     assertFalse(Utils.equals(a, b));
 
+    a = List.of(1, 2, 3);
+    b = List.of(1, 2, 4);
+    assertFalse(Utils.equals(a, b));
+
+    a = List.of(1, 2);
+    b = List.of(2, 3);
+    assertFalse(Utils.equals(a, b));
+
     // Can't pass compiling
     // assertFalse(Utils.equals(a,List.of(1.5, 2.5)));
 
@@ -35,6 +43,10 @@ public class TestUtils {
     assertTrue(Utils.equals(nestedA, nestedB));
 
     nestedA = List.of(List.of(1, 2), List.of(1, 2, 3));
+    nestedB = List.of(List.of(1, 2, 3), List.of(1, 2, 3));
+    assertFalse(Utils.equals(nestedA, nestedB));
+
+    nestedA = List.of(List.of(1, 2, 3), List.of(1, 2));
     nestedB = List.of(List.of(1, 2, 3), List.of(1, 2, 3));
     assertFalse(Utils.equals(nestedA, nestedB));
 
