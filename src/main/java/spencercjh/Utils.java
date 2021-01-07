@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
+ * Collection equals is not included in the project, so this is a simple implementation for unit test
+ *
  * @author spencercjh
  */
 public final class Utils {

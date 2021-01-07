@@ -7,8 +7,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static spencercjh.AssertionUtils.assertArrayEquals;
 
-public class TestUtils {
+public class UtilsTest {
   @Test
   void listEquals() {
     List<Integer> a = List.of(1, 2, 3);
@@ -60,5 +61,14 @@ public class TestUtils {
     nestedA = List.of(Collections.emptyList(), Collections.emptyList());
     nestedB = List.of(Collections.emptyList(), Collections.emptyList());
     assertTrue(Utils.equals(nestedA, nestedB));
+  }
+
+  @Test
+  void testAssertEquals() {
+    assertArrayEquals(new int[]{1, 2, 3}, new int[]{1, 2, 3});
+    assertArrayEquals(new double[]{1, 2, 3}, new double[]{1, 2, 3});
+    assertArrayEquals(new char[]{1, 2, 3}, new char[]{1, 2, 3});
+    assertArrayEquals(new String[]{"1", "2", "3"}, new String[]{"1", "2", "3"});
+    assertArrayEquals(new boolean[]{true, false, true}, new boolean[]{true, false, true});
   }
 }
