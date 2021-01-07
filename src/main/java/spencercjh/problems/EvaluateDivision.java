@@ -51,7 +51,7 @@ public class EvaluateDivision {
     return results;
   }
 
-  public void union(int x, int y, double value) {
+  private void union(int x, int y, double value) {
     final int rootX = find(x);
     final int rootY = find(y);
     if (rootX == rootY) {
@@ -61,7 +61,7 @@ public class EvaluateDivision {
     weights[rootX] = value * weights[y] / weights[x];
   }
 
-  public double isConnected(int x, int y) {
+  private double isConnected(int x, int y) {
     final int rootX = find(x);
     final int rootY = find(y);
     if (rootX == rootY) {
