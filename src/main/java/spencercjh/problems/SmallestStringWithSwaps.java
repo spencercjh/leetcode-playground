@@ -1,7 +1,8 @@
 package spencercjh.problems;
            
 import javax.inject.Singleton;
-            
+import java.util.List;
+
 /**
  * https://leetcode-cn.com/problems/smallest-string-with-swaps/
  *
@@ -11,7 +12,7 @@ import javax.inject.Singleton;
 public class SmallestStringWithSwaps{
 
     public String smallestStringWithSwaps(String s, List<List<Integer>> pairs) {
-
+        return "";
     }
 
 }
