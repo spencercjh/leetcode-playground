@@ -20,6 +20,7 @@ public final class Utils {
     if (a == null || b == null || a.size() != b.size()) {
       return false;
     }
+    System.out.printf("Comparing %s and %s%n", a.toString(), b.toString());
     for (int i = 0; i < a.size(); i++) {
       if (a.get(i) instanceof List) {
         if (!equals(((List) a.get(i)), (List) b.get(i))) {
