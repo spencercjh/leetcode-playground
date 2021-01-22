@@ -1,5 +1,8 @@
 package spencercjh;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -9,6 +12,8 @@ import java.util.Objects;
  * @author spencercjh
  */
 public final class Utils {
+  final static Logger logger = LoggerFactory.getLogger(Utils.class);
+
   private Utils() {
   }
 
@@ -20,7 +25,7 @@ public final class Utils {
     if (a == null || b == null || a.size() != b.size()) {
       return false;
     }
-    System.out.printf("Comparing %s and %s%n", a.toString(), b.toString());
+    logger.info("Comparing {} and {}", a.toString(), b.toString());
     for (int i = 0; i < a.size(); i++) {
       if (a.get(i) instanceof List) {
         if (!equals(((List) a.get(i)), (List) b.get(i))) {
