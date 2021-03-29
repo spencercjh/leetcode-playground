@@ -5,17 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @MicronautTest
-class 132PatternTest {
+class OneThreeTwoPatternTest {
 
   @Inject
-  private 132Pattern solution;
-  
+  private OneThreeTwoPattern solution;
+
   @Test
-  void find132pattern() {
-    
+  void findOneThreeTwoPattern() {
+
   }
 
 }
