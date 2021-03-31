@@ -12,6 +12,7 @@ public class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit{
 
     public int longestSubarray(int[] nums, int limit) {
 
+        return limit;
     }
 
 }

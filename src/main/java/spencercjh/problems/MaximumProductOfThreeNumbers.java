@@ -32,7 +32,6 @@ public class MaximumProductOfThreeNumbers {
         nextNextMax = num;
       }
     }
-    // 输入的数组中任意三个数的乘积不会超出32位有符号整数的范围。
     return Math.max(nextMin * min * max, max * nextMax * nextNextMax);
   }
 }

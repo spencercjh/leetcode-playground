@@ -12,6 +12,7 @@ public class GrumpyBookstoreOwner{
 
     public int maxSatisfied(int[] customers, int[] grumpy, int X) {
 
+        return X;
     }
 
 }

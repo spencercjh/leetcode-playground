@@ -12,6 +12,7 @@ public class SubarraysWithKDifferentIntegers{
 
     public int subarraysWithKDistinct(int[] A, int K) {
 
+        return K;
     }
 
 }

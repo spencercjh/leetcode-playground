@@ -12,6 +12,7 @@ public class ReshapeTheMatrix{
 
     public int[][] matrixReshape(int[][] nums, int r, int c) {
 
+        return nums;
     }
 
 }

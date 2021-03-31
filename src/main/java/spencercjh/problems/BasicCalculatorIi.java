@@ -12,6 +12,7 @@ public class BasicCalculatorIi{
 
     public int calculate(String s) {
 
+        return 0;
     }
 
 }

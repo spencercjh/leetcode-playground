@@ -12,6 +12,7 @@ public class CountingBits{
 
     public int[] countBits(int num) {
 
+        return new int[0];
     }
 
 }

@@ -12,6 +12,7 @@ public class NextGreaterElementIi{
 
     public int[] nextGreaterElements(int[] nums) {
 
+        return nums;
     }
 
 }

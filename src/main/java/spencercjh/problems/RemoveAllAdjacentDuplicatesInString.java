@@ -12,6 +12,7 @@ public class RemoveAllAdjacentDuplicatesInString{
 
     public String removeDuplicates(String S) {
 
+        return S;
     }
 
 }

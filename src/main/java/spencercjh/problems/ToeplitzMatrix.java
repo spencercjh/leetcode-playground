@@ -12,6 +12,7 @@ public class ToeplitzMatrix{
 
     public boolean isToeplitzMatrix(int[][] matrix) {
 
+        return false;
     }
 
 }

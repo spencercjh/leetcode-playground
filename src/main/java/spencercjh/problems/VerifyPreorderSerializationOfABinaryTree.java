@@ -12,6 +12,7 @@ public class VerifyPreorderSerializationOfABinaryTree{
 
     public boolean isValidSerialization(String preorder) {
 
+        return false;
     }
 
 }

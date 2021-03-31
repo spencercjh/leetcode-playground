@@ -12,6 +12,7 @@ public class MonotonicArray{
 
     public boolean isMonotonic(int[] A) {
 
+        return false;
     }
 
 }

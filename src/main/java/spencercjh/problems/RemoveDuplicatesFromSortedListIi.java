@@ -1,5 +1,7 @@
 package spencercjh.problems;
            
+import spencercjh.ListNode;
+
 import javax.inject.Singleton;
             
 /**
@@ -12,6 +14,7 @@ public class RemoveDuplicatesFromSortedListIi{
 
     public ListNode deleteDuplicates(ListNode head) {
 
+        return head;
     }
 
 }

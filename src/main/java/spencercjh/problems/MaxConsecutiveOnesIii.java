@@ -12,6 +12,7 @@ public class MaxConsecutiveOnesIii{
 
     public int longestOnes(int[] A, int K) {
 
+        return K;
     }
 
 }

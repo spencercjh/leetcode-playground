@@ -12,6 +12,7 @@ public class FlippingAnImage{
 
     public int[][] flipAndInvertImage(int[][] A) {
 
+        return A;
     }
 
 }

@@ -12,6 +12,7 @@ public class SpiralMatrixIi{
 
     public int[][] generateMatrix(int n) {
 
+        return new int[0][];
     }
 
 }

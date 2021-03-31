@@ -12,6 +12,7 @@ public class MinimumNumberOfKConsecutiveBitFlips{
 
     public int minKBitFlips(int[] A, int K) {
 
+        return K;
     }
 
 }

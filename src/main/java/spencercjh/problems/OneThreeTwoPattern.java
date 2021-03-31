@@ -12,6 +12,7 @@ public class OneThreeTwoPattern {
 
   public boolean findOneThreeTwoPattern(int[] nums) {
 
+    return false;
   }
 
 }
