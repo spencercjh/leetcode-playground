@@ -1,0 +1,13 @@
+version: 2
+updates:
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: io.micronaut.application
+    versions:
+    - 1.4.0
+    - 1.4.6
